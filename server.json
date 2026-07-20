@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "name": "io.importly/importly-mcp",
+  "description": "Download, transcribe, and extract metadata from any video/audio URL (YouTube, TikTok, +1000 sites). Managed yt-dlp, proxies, and speech-to-text — no local tooling.",
+  "repository": {
+    "url": "https://github.com/YOUR_GH_USER/importly-mcp",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "importly-mcp",
+      "version": "0.1.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "IMPORTLY_API_KEY",
+          "description": "Importly API key — free key with $3 credits at https://importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=official-registry",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
