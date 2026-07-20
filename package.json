@@ -35,7 +35,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YOUR_GH_USER/importly-mcp.git"
+    "url": "git+https://github.com/yyildiz/importly-mcp.git"
   },
   "homepage": "https://importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=npm",
   "dependencies": {

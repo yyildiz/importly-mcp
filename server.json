@@ -3,7 +3,7 @@
   "name": "io.importly/importly-mcp",
   "description": "Download, transcribe, and get metadata for any video/audio URL. Managed yt-dlp + speech-to-text.",
   "repository": {
-    "url": "https://github.com/YOUR_GH_USER/importly-mcp",
+    "url": "https://github.com/yyildiz/importly-mcp",
     "source": "github"
   },
   "version": "0.1.0",
