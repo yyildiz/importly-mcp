@@ -1,7 +1,7 @@
 {
-  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.importly/importly-mcp",
-  "description": "Download, transcribe, and extract metadata from any video/audio URL (YouTube, TikTok, +1000 sites). Managed yt-dlp, proxies, and speech-to-text — no local tooling.",
+  "description": "Download, transcribe, and get metadata for any video/audio URL. Managed yt-dlp + speech-to-text.",
   "repository": {
     "url": "https://github.com/YOUR_GH_USER/importly-mcp",
     "source": "github"

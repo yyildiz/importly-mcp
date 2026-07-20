@@ -19,7 +19,7 @@
   "scripts": {
     "build": "tsc",
     "test": "vitest run",
-    "smoke": "node scripts/smoke.mjs",
+    "smoke": "npm run build && node scripts/smoke.mjs",
     "prepublishOnly": "npm run build && npm test"
   },
   "keywords": [
