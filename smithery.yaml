@@ -1,0 +1,17 @@
+# Smithery configuration — https://smithery.ai/docs/config
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required: [importlyApiKey]
+    properties:
+      importlyApiKey:
+        type: string
+        title: Importly API key
+        description: Free key with $3.00 in credits (no card) at https://importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=smithery
+  commandFunction: |-
+    (config) => ({
+      command: 'npx',
+      args: ['-y', 'importly-mcp'],
+      env: { IMPORTLY_API_KEY: config.importlyApiKey }
+    })
