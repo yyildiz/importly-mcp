@@ -1,0 +1,50 @@
+{
+  "name": "importly-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Importly — let AI agents download, transcribe, and extract metadata from any video or audio URL. No yt-dlp, proxies, or ffmpeg to run yourself.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "importly-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "smoke": "node scripts/smoke.mjs",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "yt-dlp",
+    "youtube",
+    "video",
+    "audio",
+    "transcription",
+    "download",
+    "importly"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YOUR_GH_USER/importly-mcp.git"
+  },
+  "homepage": "https://importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=npm",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
+  }
+}
