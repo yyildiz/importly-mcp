@@ -19,32 +19,35 @@ Jobs are async: submit tools return a `jobId`, check tools poll it. Responses te
 
 Transcripts use the video's own captions when it has them ($0.01). For media without captions, the agent can retry with `provider: "importly"` for AI speech-to-text ($0.02/min).
 
-## Setup
+## Setup (hosted, recommended)
+
+Importly runs this server for you at **`https://mcp.importly.io/mcp`** (Streamable HTTP). Nothing to install.
 
 1. Get an API key at [importly.io](https://importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=readme) — **$3.00 in free credits, no card required**.
-2. Add the server to your MCP client:
+2. Add the server to your MCP client, sending the key as an `Authorization: Bearer` header:
 
 ### Claude Code
 
 ```bash
-claude mcp add importly -e IMPORTLY_API_KEY=your_key -- npx -y importly-mcp
+claude mcp add --transport http importly https://mcp.importly.io/mcp --header "Authorization: Bearer your_key"
 ```
 
-### Claude Desktop / Cursor / Cline / Windsurf
+### Cursor
 
 ```json
 {
   "mcpServers": {
     "importly": {
-      "command": "npx",
-      "args": ["-y", "importly-mcp"],
-      "env": { "IMPORTLY_API_KEY": "your_key" }
+      "url": "https://mcp.importly.io/mcp",
+      "headers": { "Authorization": "Bearer your_key" }
     }
   }
 }
 ```
 
-(Claude Desktop: `claude_desktop_config.json` · Cursor: `.cursor/mcp.json` · Cline: MCP settings UI · Windsurf: `~/.codeium/windsurf/mcp_config.json`)
+More clients (VS Code, Cline, Claude Desktop): [setup guide](https://importly.io/docs/integrations/mcp?utm_source=mcp&utm_medium=integration&utm_campaign=readme).
+
+> **This npm package is no longer maintained.** The hosted server above runs the same tools and always has the latest version. The source here is kept for reference.
 
 ## Example prompts
 

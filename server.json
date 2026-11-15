@@ -1,22 +1,20 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.importly/importly-mcp",
-  "description": "Download, transcribe, and get metadata for any video/audio URL. Managed yt-dlp + speech-to-text.",
+  "description": "Hosted MCP: download, transcribe, and get metadata for any video/audio URL. Managed yt-dlp.",
   "repository": {
     "url": "https://github.com/yyildiz/importly-mcp",
     "source": "github"
   },
-  "version": "0.2.0",
-  "packages": [
+  "version": "1.0.0",
+  "remotes": [
     {
-      "registryType": "npm",
-      "identifier": "importly-mcp",
-      "version": "0.2.0",
-      "transport": { "type": "stdio" },
-      "environmentVariables": [
+      "type": "streamable-http",
+      "url": "https://mcp.importly.io/mcp",
+      "headers": [
         {
-          "name": "IMPORTLY_API_KEY",
-          "description": "Importly API key — free key with $3 credits at https://importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=official-registry",
+          "name": "Authorization",
+          "description": "Bearer <your Importly API key> — free key with $3 credit at https://importly.io",
           "isRequired": true,
           "isSecret": true
         }
