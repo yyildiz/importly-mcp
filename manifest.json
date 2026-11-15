@@ -10,8 +10,8 @@
     "email": "support@importly.io",
     "url": "https://importly.io"
   },
-  "homepage": "https://importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=smithery",
-  "documentation": "https://importly.io/docs/integrations/mcp?utm_source=mcp&utm_medium=integration&utm_campaign=smithery",
+  "homepage": "https://importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=mcpb",
+  "documentation": "https://importly.io/docs/integrations/mcp?utm_source=mcp&utm_medium=integration&utm_campaign=mcpb",
   "repository": {
     "type": "git",
     "url": "https://github.com/yyildiz/importly-mcp"
