@@ -1,6 +1,6 @@
 {
   "name": "importly-mcp",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "mcpName": "io.importly/importly-mcp",
   "description": "MCP server for Importly — let AI agents download, transcribe, and extract metadata from any video or audio URL. No yt-dlp, proxies, or ffmpeg to run yourself.",
   "license": "MIT",

@@ -2,7 +2,7 @@
   "manifest_version": "0.2",
   "name": "importly-mcp",
   "display_name": "Importly",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Download, transcribe, and get metadata for any video/audio URL. Managed yt-dlp + speech-to-text.",
   "long_description": "Give your AI agent the ability to download, transcribe, and inspect any video or audio URL — YouTube, TikTok, X, podcasts, and 1000+ other sites. Importly runs yt-dlp, rotating residential proxies, ffmpeg, and speech-to-text server-side, so your agent never deals with IP bans, 429s, cookie rot, or extractor breakage. Free API key with $3.00 in credits at importly.io.",
   "author": {

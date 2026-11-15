@@ -13,8 +13,11 @@ Give your AI agent the ability to **download, transcribe, and inspect any video 
 | `get_metadata` / `check_metadata` | Full metadata: formats, uploader, thumbnails, stats |
 | `get_basic_metadata` / `check_basic_metadata` | Fast title/duration/thumbnail lookup |
 | `check_balance` | Remaining credit balance |
+| `get_integration_guide` | Working code (Node, Next.js, Python, cURL) to add Importly to your own app: key setup, webhooks, polling, errors. No credits used |
 
 Jobs are async: submit tools return a `jobId`, check tools poll it. Responses tell the agent exactly what to do next.
+
+Transcripts use the video's own captions when it has them ($0.01). For media without captions, the agent can retry with `provider: "importly"` for AI speech-to-text ($0.02/min).
 
 ## Setup
 
@@ -48,6 +51,7 @@ claude mcp add importly -e IMPORTLY_API_KEY=your_key -- npx -y importly-mcp
 - "Transcribe this talk and summarize the key points: https://www.youtube.com/watch?v=…"
 - "Download the audio of this podcast episode and give me a link"
 - "How long is this video and who uploaded it?"
+- "Add import-from-URL to our upload form using Importly" (the agent calls `get_integration_guide` and writes the code, with the same API key read from your environment)
 
 ## Pricing
 

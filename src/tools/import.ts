@@ -22,7 +22,8 @@ export const importTools: ToolDef[] = [
       'Download the video/audio at any URL (YouTube, TikTok, X, and 1000+ sites) to hosted storage and get back a direct download link. ' +
       'Importly runs yt-dlp, rotating residential proxies, and ffmpeg server-side — no local tooling needed. ' +
       'Async: returns a jobId immediately; poll check_import for the result. ' +
-      'Optionally also produce a transcript in the same job with includeTranscript.',
+      'Optionally also produce a transcript in the same job with includeTranscript. ' +
+      'To add downloads to the user\'s own app instead, call get_integration_guide.',
     inputSchema: {
       url: z.string().describe('Media page URL, e.g. https://www.youtube.com/watch?v=...'),
       includeVideo: z.boolean().optional().describe('Include video stream (default true)'),

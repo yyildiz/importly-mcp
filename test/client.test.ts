@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { importlyRequest, ImportlyApiError, MISSING_KEY_MESSAGE } from '../src/client.js'
+import { importlyRequest, ImportlyApiError, MISSING_KEY_MESSAGE, setClientInfo } from '../src/client.js'
+import { VERSION } from '../src/version.js'
 
 const mockFetch = vi.fn()
 
@@ -38,6 +39,18 @@ describe('importlyRequest', () => {
     expect(init.headers['Authorization']).toBe('Bearer test-key')
     expect(init.method).toBe('POST')
     expect(JSON.parse(init.body)).toEqual({ url: 'https://x.test/v' })
+  })
+
+  it('identifies itself and the MCP client in the User-Agent', async () => {
+    mockFetch.mockReturnValue(jsonResponse(200, { success: true, data: {} }))
+    setClientInfo(undefined)
+    await importlyRequest('/balance')
+    expect(mockFetch.mock.calls[0][1].headers['User-Agent']).toBe(`importly-mcp/${VERSION}`)
+
+    setClientInfo('claude-code')
+    await importlyRequest('/balance')
+    expect(mockFetch.mock.calls[1][1].headers['User-Agent']).toBe(`importly-mcp/${VERSION} (claude-code)`)
+    setClientInfo(undefined)
   })
 
   it('appends query params for GET requests', async () => {

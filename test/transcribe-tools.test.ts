@@ -33,6 +33,19 @@ describe('transcribe tools', () => {
     expect(text).toContain('check_transcription')
   })
 
+  it('transcribe_media passes provider through for videos without captions', async () => {
+    mockFetch.mockReturnValue(jsonResponse({ success: true, data: { jobId: 'j4', status: 'queued' } }))
+    await tool('transcribe_media').handler({ url: 'https://tiktok.com/@a/video/1', provider: 'importly', maxCostDollars: 0.5 })
+    const [, init] = mockFetch.mock.calls[0]
+    expect(JSON.parse(init.body)).toEqual({ url: 'https://tiktok.com/@a/video/1', provider: 'importly', maxCostDollars: 0.5 })
+  })
+
+  it('transcribe_media explains when to use provider importly', () => {
+    const { description, inputSchema } = tool('transcribe_media')
+    expect(description).toContain('provider')
+    expect(inputSchema.provider).toBeDefined()
+  })
+
   it('check_transcription returns transcript on completion', async () => {
     mockFetch.mockReturnValue(jsonResponse({
       success: true,

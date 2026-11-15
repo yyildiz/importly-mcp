@@ -1,3 +1,5 @@
+import { VERSION } from './version.js'
+
 const DEFAULT_BASE_URL = 'https://api.importly.io'
 
 export const SIGNUP_URL = 'https://importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=server'
@@ -8,6 +10,16 @@ export const MISSING_KEY_MESSAGE =
   `Get a free key at ${SIGNUP_URL} — $3.00 in free credits, no card required.`
 
 export class ImportlyApiError extends Error {}
+
+// Name of the MCP client (e.g. "claude-code", "cursor") from the initialize
+// handshake. Sent in the User-Agent so Importly can see which agents use it.
+let clientName: string | undefined
+
+export function setClientInfo(name: string | undefined) {
+  clientName = name
+}
+
+const userAgent = () => (clientName ? `importly-mcp/${VERSION} (${clientName})` : `importly-mcp/${VERSION}`)
 
 interface RequestOptions {
   method?: 'GET' | 'POST'
@@ -29,7 +41,8 @@ export async function importlyRequest(path: string, options: RequestOptions = {}
       method: options.method || 'GET',
       headers: {
         'Authorization': `Bearer ${apiKey}`,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'User-Agent': userAgent()
       },
       body: options.body ? JSON.stringify(options.body) : undefined
     })
