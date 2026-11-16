@@ -3,8 +3,8 @@
   "name": "importly-mcp",
   "display_name": "Importly",
   "version": "0.2.0",
-  "description": "Download, transcribe, and get metadata for any video/audio URL. Managed yt-dlp + speech-to-text.",
-  "long_description": "Give your AI agent the ability to download, transcribe, and inspect any video or audio URL — YouTube, TikTok, X, podcasts, and 1000+ other sites. Importly runs yt-dlp, rotating residential proxies, ffmpeg, and speech-to-text server-side, so your agent never deals with IP bans, 429s, cookie rot, or extractor breakage. Free API key with $3.00 in credits at importly.io.",
+  "description": "Download, transcribe, and get metadata for any video/audio URL. Residential proxies + speech-to-text.",
+  "long_description": "Give your AI agent the ability to download, transcribe, and inspect any video or audio URL — YouTube, TikTok, X, podcasts, and 1000+ other sites. Importly runs the downloads, rotating residential proxies, ffmpeg, and speech-to-text server-side, so your agent never deals with IP bans, 429s, cookie rot, or extractor breakage. Free API key with $3.00 in credits at importly.io.",
   "author": {
     "name": "Importly",
     "email": "support@importly.io",
@@ -17,7 +17,7 @@
     "url": "https://github.com/yyildiz/importly-mcp"
   },
   "license": "MIT",
-  "keywords": ["video", "audio", "transcription", "yt-dlp", "youtube", "download", "metadata"],
+  "keywords": ["video", "audio", "transcription", "youtube", "download", "metadata"],
   "server": {
     "type": "node",
     "entry_point": "dist/index.js",

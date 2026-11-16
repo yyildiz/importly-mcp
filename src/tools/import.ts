@@ -20,7 +20,7 @@ export const importTools: ToolDef[] = [
     name: 'import_media',
     description:
       'Download the video/audio at any URL (YouTube, TikTok, X, and 1000+ sites) to hosted storage and get back a direct download link. ' +
-      'Importly runs yt-dlp, rotating residential proxies, and ffmpeg server-side — no local tooling needed. ' +
+      'Importly runs the download, rotating residential proxies, and ffmpeg server-side — no local tooling needed. ' +
       'Async: returns a jobId immediately; poll check_import for the result. ' +
       'Optionally also produce a transcript in the same job with includeTranscript. ' +
       'To add downloads to the user\'s own app instead, call get_integration_guide.',

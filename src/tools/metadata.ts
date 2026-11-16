@@ -16,7 +16,7 @@ export const metadataTools: ToolDef[] = [
     name: 'get_metadata',
     description:
       'Extract full metadata for a video/audio URL (title, description, duration, uploader, formats, thumbnails, view counts) without downloading the media. ' +
-      'Works on YouTube, TikTok, X, and 1000+ sites — no yt-dlp to run yourself. Async: poll check_metadata with the returned jobId. ' +
+      'Works on YouTube, TikTok, X, and 1000+ sites — nothing to install or run yourself. Async: poll check_metadata with the returned jobId. ' +
       'For just title/duration/thumbnail, prefer the faster get_basic_metadata. ' +
       'To add metadata lookups to the user\'s own app instead, call get_integration_guide.',
     inputSchema: urlInput,

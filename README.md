@@ -2,7 +2,7 @@
 
 Give your AI agent the ability to **download, transcribe, and inspect any video or audio URL** — YouTube, TikTok, X, podcasts, and 1000+ other sites.
 
-[Importly](https://importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=readme) runs yt-dlp, rotating residential proxies, ffmpeg, and speech-to-text server-side, so your agent (and you) never deal with IP bans, 429s, cookie rot, or extractor breakage.
+[Importly](https://importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=readme) runs the downloads, rotating residential proxies, ffmpeg, and speech-to-text server-side, so your agent (and you) never deal with IP bans, 429s, cookie rot, or extractor breakage.
 
 ## Tools
 

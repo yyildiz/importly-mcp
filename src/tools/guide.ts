@@ -30,7 +30,7 @@ const USE_CASE_INFO: Record<GuideUseCase, { summary: string, resultFields: strin
   metadata: {
     summary: 'Get full metadata for a media URL (title, duration, uploader, formats, thumbnails, view counts) without downloading.',
     resultFields: '`result.title`, `result.duration`, `result.uploader`, `result.formats`, `result.thumbnail`',
-    webhookFields: '`data.title`, `data.duration`, `data.uploader`, `data.formats`, `data.thumbnail` (raw yt-dlp fields, snake_case)',
+    webhookFields: '`data.title`, `data.duration`, `data.uploader`, `data.formats`, `data.thumbnail` (raw source fields, snake_case)',
     keyField: 'data.title'
   }
 }
