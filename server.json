@@ -6,7 +6,7 @@
     "url": "https://github.com/yyildiz/importly-mcp",
     "source": "github"
   },
-  "version": "1.0.1",
+  "version": "1.1.0",
   "remotes": [
     {
       "type": "streamable-http",
@@ -14,8 +14,8 @@
       "headers": [
         {
           "name": "Authorization",
-          "description": "Bearer <your Importly API key> — free key with $3 credit at https://importly.io",
-          "isRequired": true,
+          "description": "Optional; clients that support OAuth sign in instead. Otherwise: Bearer <Importly API key> (free $3 credit at https://importly.io)",
+          "isRequired": false,
           "isSecret": true
         }
       ]

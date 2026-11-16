@@ -23,16 +23,22 @@ Transcripts use the video's own captions when it has them ($0.01). For media wit
 
 Importly runs this server for you at **`https://mcp.importly.io/mcp`** (Streamable HTTP). Nothing to install.
 
+### Claude.ai, ChatGPT, Claude Desktop
+
+Add a **custom connector** with the URL `https://mcp.importly.io/mcp`, click **Connect**, and sign in to Importly (new accounts get **$3.00 in free credits, no card required**). No API key needed.
+
+### Coding agents (API key)
+
 1. Get an API key at [importly.io](https://importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=readme) — **$3.00 in free credits, no card required**.
 2. Add the server to your MCP client, sending the key as an `Authorization: Bearer` header:
 
-### Claude Code
+#### Claude Code
 
 ```bash
 claude mcp add --transport http importly https://mcp.importly.io/mcp --header "Authorization: Bearer your_key"
 ```
 
-### Cursor
+#### Cursor
 
 ```json
 {
@@ -45,7 +51,7 @@ claude mcp add --transport http importly https://mcp.importly.io/mcp --header "A
 }
 ```
 
-More clients (VS Code, Cline, Claude Desktop): [setup guide](https://importly.io/docs/integrations/mcp?utm_source=mcp&utm_medium=integration&utm_campaign=readme).
+More clients (VS Code, Cline, …): [setup guide](https://importly.io/docs/integrations/mcp?utm_source=mcp&utm_medium=integration&utm_campaign=readme).
 
 > **This npm package is no longer maintained.** The hosted server above runs the same tools and always has the latest version. The source here is kept for reference.
 
