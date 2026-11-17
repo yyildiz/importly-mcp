@@ -1,12 +1,12 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.importly/importly-mcp",
-  "description": "Hosted MCP: download, transcribe, and get metadata for any video/audio URL, via residential proxies.",
+  "description": "Turn any video or audio link into files, transcripts and metadata, right from your AI agent.",
   "repository": {
     "url": "https://github.com/yyildiz/importly-mcp",
     "source": "github"
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "remotes": [
     {
       "type": "streamable-http",

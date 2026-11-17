@@ -8,7 +8,7 @@ export const transcribeTools: ToolDef[] = [
     name: 'transcribe_media',
     description:
       'Transcribe the audio of any video/audio URL (YouTube, TikTok, podcasts, and 1000+ sites) to text with timestamped segments. ' +
-      'Importly handles the download, audio extraction, and speech-to-text server-side — no local downloader or ffmpeg needed. ' +
+      'Works from agent sandboxes and servers, with nothing to install. ' +
       'Async: returns a jobId immediately; poll check_transcription for the transcript. ' +
       'Uses the video\'s own captions when it has them ($0.01). If it has none, the job fails with a cost quote: ' +
       'retry with provider "importly" for AI speech-to-text ($0.02/min), and set maxCostDollars to cap spend on long media. ' +

@@ -1,8 +1,8 @@
 # Importly MCP Server
 
-Give your AI agent the ability to **download, transcribe, and inspect any video or audio URL** — YouTube, TikTok, X, podcasts, and 1000+ other sites.
+Turn any video or audio link into **files, transcripts and metadata**, right from your AI agent: YouTube, TikTok, X, podcasts, and 1000+ other sites.
 
-[Importly](https://importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=readme) runs the downloads, rotating residential proxies, ffmpeg, and speech-to-text server-side, so your agent (and you) never deal with IP bans, 429s, cookie rot, or extractor breakage.
+[Importly](https://www.importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=readme) is one API for your app, and the same key works in your agent over MCP. It works from agent sandboxes and cloud servers where downloads usually get blocked, so you never deal with blocked requests, broken downloaders, or videos without captions.
 
 ## Tools
 
