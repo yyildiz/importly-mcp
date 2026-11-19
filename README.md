@@ -17,7 +17,7 @@ Turn any video or audio link into **files, transcripts and metadata**, right fro
 
 Jobs are async: submit tools return a `jobId`, check tools poll it. Responses tell the agent exactly what to do next.
 
-Transcripts use the video's own captions when it has them ($0.01). For media without captions, the agent can retry with `provider: "importly"` for AI speech-to-text ($0.02/min).
+Transcripts use the video's own captions when it has them ($0.003). For media without captions, the agent can retry with `provider: "importly"` for AI speech-to-text ($0.01/min).
 
 ## Setup (hosted, recommended)
 
@@ -64,7 +64,13 @@ More clients (VS Code, Cline, …): [setup guide](https://importly.io/docs/integ
 
 ## Pricing
 
-Usage-based credits (downloads ~$0.01/MB, transcription per media minute) — see [pricing](https://importly.io/pricing?utm_source=mcp&utm_medium=integration&utm_campaign=readme). New accounts get $3.00 free.
+Pay per use, from credits. What typical tasks cost:
+
+- A 10-minute 720p video downloaded: about **$0.15**
+- A 10-minute podcast transcribed with AI: **$0.10**
+- A transcript from the video's own captions, or a metadata lookup: **$0.003**
+
+AI speech-to-text is $0.01 per minute, all-in ($0.005/min with your own speech-to-text key). Downloads are $2.05/GB. Minimum $0.01 per import or transcription. New accounts get **$3.00 in free credits, no card required**. See [pricing](https://www.importly.io/pricing?utm_source=mcp&utm_medium=integration&utm_campaign=readme).
 
 ## Docs & support
 

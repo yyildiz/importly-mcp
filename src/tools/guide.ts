@@ -22,7 +22,7 @@ const USE_CASE_INFO: Record<GuideUseCase, { summary: string, resultFields: strin
     keyField: 'data.mediaUrl'
   },
   transcribe: {
-    summary: 'Transcribe a media URL. Uses the video\'s own captions when available; pass `provider: "importly"` for AI speech-to-text when it has none ($0.02/min).',
+    summary: 'Transcribe a media URL. Uses the video\'s own captions when available; pass `provider: "importly"` for AI speech-to-text when it has none ($0.01/min).',
     resultFields: '`result.text` (full transcript), `result.data.segments` (timestamped), `result.language`',
     webhookFields: '`data.text`, `data.data.segments`, `data.language`',
     keyField: 'data.text'

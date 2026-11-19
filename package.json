@@ -1,6 +1,6 @@
 {
   "name": "importly-mcp",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "mcpName": "io.importly/importly-mcp",
   "description": "MCP server for Importly: turn any video or audio link into files, transcripts and metadata, right from your AI agent.",
   "license": "MIT",
@@ -31,6 +31,8 @@
     "audio",
     "transcription",
     "download",
+    "metadata",
+    "api",
     "importly"
   ],
   "repository": {
