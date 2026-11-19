@@ -2,9 +2,9 @@
   "manifest_version": "0.2",
   "name": "importly-mcp",
   "display_name": "Importly",
-  "version": "0.2.1",
-  "description": "Turn any video or audio link into files, transcripts and metadata, right from your AI agent.",
-  "long_description": "Turn any video or audio link into files, transcripts and metadata: YouTube, TikTok, X, podcasts, and 1000+ other sites. One API for your app. The same key works in your AI agent over MCP. Works from agent sandboxes and cloud servers where downloads usually get blocked, so your agent never deals with blocked requests, broken downloaders, or videos without captions. Free API key with $3.00 in credits, no card required, at importly.io.",
+  "version": "0.2.2",
+  "description": "Turn any video or audio link into files, transcripts and metadata for your app. Your AI agent can build it in over MCP.",
+  "long_description": "Turn any video or audio link into files, transcripts and metadata: YouTube, TikTok, X, podcasts, and 1000+ other sites. One API for your app, and your AI agent can build it in over MCP: get_integration_guide gives it working code for your stack, it tests real calls with your key, and your backend uses the same key. Your app keeps working on production servers where downloads usually get blocked, without broken downloaders or videos missing captions. Free API key with $3.00 in credits, no card required, at importly.io.",
   "author": {
     "name": "Importly",
     "email": "support@importly.io",

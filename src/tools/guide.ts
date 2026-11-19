@@ -11,6 +11,12 @@ export type GuideUseCase = 'import' | 'transcribe' | 'metadata'
 const LANGUAGES: GuideLanguage[] = ['node', 'nextjs', 'python', 'curl']
 const USE_CASES: GuideUseCase[] = ['import', 'transcribe', 'metadata']
 
+const USE_CASE_TOOL: Record<GuideUseCase, string> = {
+  import: 'import_media',
+  transcribe: 'transcribe_media',
+  metadata: 'get_metadata'
+}
+
 const API = 'https://api.importly.io'
 const DOCS = 'https://importly.io'
 
@@ -194,7 +200,10 @@ ${code.build(useCase)}
 - **Webhook** (recommended): pass \`webhookUrl\`; Importly sends one POST when the job succeeds. Result fields are flattened into \`data\`: ${info.webhookFields}. Failed jobs do not fire webhooks and there are no retries, so keep a polling fallback.
 - **Polling**: \`GET ${API}/${useCase}/status?id=<jobId>\` until \`status\` is \`completed\` or \`failed\`. Completed jobs include ${info.resultFields}. Poll every few seconds (limit: 3,600 status requests per hour per key).
 
-## 4. Errors
+## 4. Test it
+Before wiring up the UI, run the matching MCP tool (\`${USE_CASE_TOOL[useCase]}\`) on a real link the app will see. It runs the same job as \`POST ${API}/${useCase}\`, at the same price, so its result shows what the app will get back for that link.
+
+## 5. Errors
 - 400: invalid URL or parameters
 - 401: missing or invalid API key
 - 402: insufficient credits (top up at https://importly.io/dashboard)
@@ -211,10 +220,10 @@ export const guideTools: ToolDef[] = [
   {
     name: 'get_integration_guide',
     description:
-      'Get working code for adding Importly to the user\'s own app (Node, Next.js, Python, or cURL): API key setup, ' +
-      'starting a job, receiving the result by webhook or polling, and error handling. ' +
-      'Use this when the user wants their application (not just this chat) to download, transcribe, or get metadata for media URLs. ' +
-      'Does not call the API or use credits.',
+      'Get working code that builds Importly into the user\'s own app (Node, Next.js, Python, or cURL): API key setup, ' +
+      'starting a job from the backend, receiving the result by webhook or polling, and error handling. ' +
+      'Call this first whenever the user is building or changing an app that takes video or audio links and needs the file, a transcript, or metadata. ' +
+      'The app reads the same API key from its server environment. Does not call the API or use credits.',
     inputSchema: {
       language: z.enum(LANGUAGES as [GuideLanguage, ...GuideLanguage[]]).optional().describe('Language/framework of the user\'s app (default node)'),
       useCase: z.enum(USE_CASES as [GuideUseCase, ...GuideUseCase[]]).optional().describe('What the app needs: import (download), transcribe, or metadata (default import)')

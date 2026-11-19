@@ -1,21 +1,21 @@
 # Importly MCP Server
 
-Turn any video or audio link into **files, transcripts and metadata**, right from your AI agent: YouTube, TikTok, X, podcasts, and 1000+ other sites.
+Turn any video or audio link into **files, transcripts and metadata for your app**: YouTube, TikTok, X, podcasts, and 1000+ other sites. Your AI agent can build it in over MCP.
 
-[Importly](https://www.importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=readme) is one API for your app, and the same key works in your agent over MCP. It works from agent sandboxes and cloud servers where downloads usually get blocked, so you never deal with blocked requests, broken downloaders, or videos without captions.
+[Importly](https://www.importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=readme) is one API for your app. It keeps working on production servers where downloads usually get blocked, so you never deal with blocked requests, broken downloaders, or videos without captions. Connect this MCP server to your coding agent and ask it to add Importly to your app: it gets working code for your stack from `get_integration_guide`, writes the integration, and tests real calls with your API key. Your backend then uses the same key.
 
 ## Tools
 
 | Tool | What it does |
 | ---- | ------------ |
+| `get_integration_guide` | Working code (Node, Next.js, Python, cURL) to build Importly into your app: key setup, webhooks, polling, errors. No credits used |
 | `import_media` / `check_import` | Download media to hosted storage, get a direct link (optionally with a transcript) |
 | `transcribe_media` / `check_transcription` | Speech-to-text with timestamped segments |
 | `get_metadata` / `check_metadata` | Full metadata: formats, uploader, thumbnails, stats |
 | `get_basic_metadata` / `check_basic_metadata` | Fast title/duration/thumbnail lookup |
 | `check_balance` | Remaining credit balance |
-| `get_integration_guide` | Working code (Node, Next.js, Python, cURL) to add Importly to your own app: key setup, webhooks, polling, errors. No credits used |
 
-Jobs are async: submit tools return a `jobId`, check tools poll it. Responses tell the agent exactly what to do next.
+Each media tool runs the same job as its REST endpoint, so what the agent sees in a test call is what your app gets. Jobs are async: submit tools return a `jobId`, check tools poll it. Responses tell the agent exactly what to do next.
 
 Transcripts use the video's own captions when it has them ($0.003). For media without captions, the agent can retry with `provider: "importly"` for AI speech-to-text ($0.01/min).
 
@@ -57,10 +57,10 @@ More clients (VS Code, Cline, …): [setup guide](https://importly.io/docs/integ
 
 ## Example prompts
 
-- "Transcribe this talk and summarize the key points: https://www.youtube.com/watch?v=…"
-- "Download the audio of this podcast episode and give me a link"
-- "How long is this video and who uploaded it?"
-- "Add import-from-URL to our upload form using Importly" (the agent calls `get_integration_guide` and writes the code, with the same API key read from your environment)
+- "Add import-from-URL to our upload form using Importly. Download the media server-side and save it like a normal upload." (the agent calls `get_integration_guide`, writes the code, and reads the same API key from your environment)
+- "When a user adds a video link, use Importly to fetch its transcript and store it with timestamps."
+- "Show a preview card (title, duration, thumbnail) when someone pastes a video URL, using Importly basic metadata."
+- One-off jobs work too: "Transcribe this talk and summarize the key points: https://www.youtube.com/watch?v=…"
 
 ## Pricing
 

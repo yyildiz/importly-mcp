@@ -20,10 +20,10 @@ export const importTools: ToolDef[] = [
     name: 'import_media',
     description:
       'Download the video/audio at any URL (YouTube, TikTok, X, and 1000+ sites) to hosted storage and get back a direct download link. ' +
-      'Works from agent sandboxes and servers where downloads usually get blocked, with nothing to install. ' +
       'Async: returns a jobId immediately; poll check_import for the result. ' +
       'Optionally also produce a transcript in the same job with includeTranscript. ' +
-      'To add downloads to the user\'s own app instead, call get_integration_guide.',
+      'Runs the same job as POST /import in the REST API, so it doubles as a test call while building downloads into the user\'s app; ' +
+      'for that app code, call get_integration_guide.',
     inputSchema: {
       url: z.string().describe('Media page URL, e.g. https://www.youtube.com/watch?v=...'),
       includeVideo: z.boolean().optional().describe('Include video stream (default true)'),
