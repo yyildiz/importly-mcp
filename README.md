@@ -17,7 +17,7 @@ Turn any video or audio link into **files, transcripts and metadata for your app
 
 Each media tool runs the same job as its REST endpoint, so what the agent sees in a test call is what your app gets. Jobs are async: submit tools return a `jobId`, check tools poll it. Responses tell the agent exactly what to do next.
 
-Transcripts use the video's own captions when it has them ($0.003). For media without captions, the agent can retry with `provider: "importly"` for AI speech-to-text ($0.01/min).
+`transcribe_media` usually returns the finished transcript in one call. It uses the video's own captions when it has them ($0.003) and AI speech-to-text when it has none ($0.01/min); `maxCostDollars` caps the charge on long media.
 
 ## Setup (hosted, recommended)
 
@@ -29,7 +29,7 @@ Add a **custom connector** with the URL `https://mcp.importly.io/mcp`, click **C
 
 ### Coding agents (API key)
 
-1. Get an API key at [importly.io](https://importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=readme) — **$3.00 in free credits, no card required**.
+1. Get an API key at [importly.io](https://www.importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=readme) — **$3.00 in free credits, no card required**.
 2. Add the server to your MCP client, sending the key as an `Authorization: Bearer` header:
 
 #### Claude Code
@@ -51,7 +51,7 @@ claude mcp add --transport http importly https://mcp.importly.io/mcp --header "A
 }
 ```
 
-More clients (VS Code, Cline, …): [setup guide](https://importly.io/docs/integrations/mcp?utm_source=mcp&utm_medium=integration&utm_campaign=readme).
+More clients (VS Code, Cline, …): [setup guide](https://www.importly.io/docs/integrations/mcp?utm_source=mcp&utm_medium=integration&utm_campaign=readme).
 
 > **This npm package is no longer maintained.** The hosted server above runs the same tools and always has the latest version. The source here is kept for reference.
 
@@ -74,8 +74,8 @@ AI speech-to-text is $0.01 per minute, all-in ($0.005/min with your own speech-t
 
 ## Docs & support
 
-- [Setup guide](https://importly.io/docs/integrations/mcp?utm_source=mcp&utm_medium=integration&utm_campaign=readme)
-- [API docs](https://importly.io/docs?utm_source=mcp&utm_medium=integration&utm_campaign=readme)
+- [Setup guide](https://www.importly.io/docs/integrations/mcp?utm_source=mcp&utm_medium=integration&utm_campaign=readme)
+- [API docs](https://www.importly.io/docs?utm_source=mcp&utm_medium=integration&utm_campaign=readme)
 - support@importly.io
 
-MIT licensed. The server is a thin wrapper over the [Importly API](https://importly.io/docs?utm_source=mcp&utm_medium=integration&utm_campaign=readme).
+MIT licensed. The server is a thin wrapper over the [Importly API](https://www.importly.io/docs?utm_source=mcp&utm_medium=integration&utm_campaign=readme).

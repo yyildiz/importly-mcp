@@ -41,8 +41,8 @@ describe('get_integration_guide', () => {
         expect(guide).toContain(`https://api.importly.io/${useCase}`)
         expect(guide).toContain(`/${useCase}/status?id=`)
         expect(guide).toContain('webhookUrl')
-        expect(guide).toContain('https://importly.io/llms-full.txt')
-        expect(guide).toContain(`https://importly.io/docs/endpoints/${useCase}.md`)
+        expect(guide).toContain('https://www.importly.io/llms-full.txt')
+        expect(guide).toContain(`https://www.importly.io/docs/endpoints/${useCase}.md`)
       })
     }
   }

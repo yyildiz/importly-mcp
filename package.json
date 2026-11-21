@@ -39,7 +39,7 @@
     "type": "git",
     "url": "git+https://github.com/yyildiz/importly-mcp.git"
   },
-  "homepage": "https://importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=npm",
+  "homepage": "https://www.importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=npm",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
     "zod": "^4.4.3"

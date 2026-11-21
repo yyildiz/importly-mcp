@@ -28,7 +28,7 @@ server.server.oninitialized = () => {
 for (const tool of allTools) {
   server.registerTool(
     tool.name,
-    { description: tool.description, inputSchema: tool.inputSchema },
+    { title: tool.title, description: tool.description, inputSchema: tool.inputSchema, annotations: { title: tool.title, ...tool.annotations } },
     async (args: Record<string, unknown>) => {
       try {
         const text = await tool.handler(args)

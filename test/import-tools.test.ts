@@ -30,7 +30,13 @@ describe('import tools', () => {
     expect(text).toContain('"jobId": "j1"')
     expect(text).toContain('check_import')
     const [, init] = mockFetch.mock.calls[0]
-    expect(JSON.parse(init.body)).toEqual({ url: 'https://youtube.com/watch?v=x', videoQuality: '720p' })
+    expect(JSON.parse(init.body)).toEqual({ url: 'https://youtube.com/watch?v=x', videoQuality: '720p', fitQualityToBalance: true })
+  })
+
+  it('check_import names the quality used when the balance lowered it', async () => {
+    mockFetch.mockReturnValue(jsonResponse({ success: true, data: { jobId: 'j1', status: 'completed', result: { videoQuality: '480p', requestedVideoQuality: '1080p' } } }))
+    const text = await tool('check_import').handler({ jobId: 'j1' })
+    expect(text).toContain('Downloaded at 480p, not the requested 1080p')
   })
 
   it('check_import passes the job id and repeats guidance while running', async () => {

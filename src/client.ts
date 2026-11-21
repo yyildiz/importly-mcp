@@ -2,8 +2,8 @@ import { VERSION } from './version.js'
 
 const DEFAULT_BASE_URL = 'https://api.importly.io'
 
-export const SIGNUP_URL = 'https://importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=server'
-export const DASHBOARD_URL = 'https://importly.io/dashboard?utm_source=mcp&utm_medium=integration&utm_campaign=server'
+export const SIGNUP_URL = 'https://www.importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=server'
+export const DASHBOARD_URL = 'https://www.importly.io/dashboard?utm_source=mcp&utm_medium=integration&utm_campaign=server'
 
 export const MISSING_KEY_MESSAGE =
   'No Importly API key configured. Set the IMPORTLY_API_KEY environment variable in your MCP client config. ' +
@@ -47,7 +47,7 @@ export async function importlyRequest(path: string, options: RequestOptions = {}
       body: options.body ? JSON.stringify(options.body) : undefined
     })
   } catch {
-    throw new ImportlyApiError('Importly API unreachable — check your network or retry shortly. Status page: https://importly.io')
+    throw new ImportlyApiError('Importly API unreachable — check your network or retry shortly. Status page: https://www.importly.io')
   }
 
   let parsed: { success?: boolean, data?: unknown, error?: string }

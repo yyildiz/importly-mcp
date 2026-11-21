@@ -14,7 +14,7 @@
       "headers": [
         {
           "name": "Authorization",
-          "description": "Optional; clients that support OAuth sign in instead. Otherwise: Bearer <Importly API key> (free $3 credit at https://importly.io)",
+          "description": "Optional; clients that support OAuth sign in instead. Otherwise: Bearer <Importly API key> (free to try, no card required: https://www.importly.io)",
           "isRequired": false,
           "isSecret": true
         }

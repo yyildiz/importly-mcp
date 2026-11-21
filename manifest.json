@@ -8,10 +8,10 @@
   "author": {
     "name": "Importly",
     "email": "support@importly.io",
-    "url": "https://importly.io"
+    "url": "https://www.importly.io"
   },
-  "homepage": "https://importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=mcpb",
-  "documentation": "https://importly.io/docs/integrations/mcp?utm_source=mcp&utm_medium=integration&utm_campaign=mcpb",
+  "homepage": "https://www.importly.io/?utm_source=mcp&utm_medium=integration&utm_campaign=mcpb",
+  "documentation": "https://www.importly.io/docs/integrations/mcp?utm_source=mcp&utm_medium=integration&utm_campaign=mcpb",
   "repository": {
     "type": "git",
     "url": "https://github.com/yyildiz/importly-mcp"
@@ -33,7 +33,7 @@
     "importly_api_key": {
       "type": "string",
       "title": "Importly API Key",
-      "description": "Free key with $3.00 in credits (no card required) at https://importly.io",
+      "description": "Free key with $3.00 in credits (no card required) at https://www.importly.io",
       "sensitive": true,
       "required": true
     }
