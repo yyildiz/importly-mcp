@@ -54,6 +54,7 @@ export const importTools: ToolDef[] = [
       includeAudio: z.boolean().optional().describe('Include audio stream (default true)'),
       videoQuality: z.enum(['lowest', '144p', '240p', '360p', '480p', '720p', '1080p', '1440p', '2160p', 'best']).optional().describe('Default 720p. Drops to the highest quality the credit balance covers when it can\'t pay for this one'),
       audioQuality: z.enum(['lowest', 'low', 'medium', 'high', 'best']).optional().describe('Default medium'),
+      compatibleCodecs: z.boolean().optional().describe('Prefer H.264 video and AAC audio, which play everywhere (Safari, iOS, editors), over smaller AV1/VP9 files at the same resolution. Default false'),
       maxCostDollars: z.number().min(0.01).optional().describe('Most this request may cost in total, in dollars (download plus transcript), at least 0.01. If it would cost more, nothing is downloaded and the job fails with MAX_COST_EXCEEDED and the price, for a $0.003 price check'),
       includeTranscript: z.boolean().optional().describe('Also transcribe the audio in the same job'),
       transcriptLanguage: z.string().optional().describe('ISO language hint for the transcript, e.g. "en"')
